@@ -3,6 +3,8 @@ module.exports = {
     create: function (req, res, next) {
         childModel.create({
             name: req.body.name,
+            sex:req.body.sex,
+            dob:req.body.dob,
             fathername: req.body.fathername,
             mothername: req.body.mothername,
             city: req.body.city,

@@ -1,12 +1,37 @@
-LocalStrategy = require('passport-local-mongoose'); //This is required to allow passport implementation on each user
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-const ChildSchema = new Schema({
+
+const childSchema = new Schema({
+    name: {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    sex: {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    dob: {
+        type: Date,
+        required: true,
+        trim: true,
+    },
+    mothername: {
+        type: String,
+        trim: true,
+        required: true,
+    },
+    fathername: {
+        type: String,
+        trim: true,
+        required: true,
+    },
     state: {
         type: String,
         trim: true,
         required: true,
     }
 });
-chilSchema.plugin(LocalStrategy); //This plugs the LocalStrategy to each user
+
 module.exports = mongoose.model('Child', chilSchema);
