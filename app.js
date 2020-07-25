@@ -1,7 +1,8 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-var jwt = require('jsonwebtoken');
+var jwt = require('jsonwebtoken'),
+    flash = require('connect-flash');
 const mongoose = require('./config');
 const routes = require('./routes/index');
 
@@ -9,6 +10,8 @@ const app = express();
 
 app.set('secretKey', 'nodeRestApi');
 app.use(logger('dev'));
+app.use(flash());
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
