@@ -34,4 +34,4 @@ const childSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Child', chilSchema);
+module.exports = mongoose.model('Child', childSchema);
